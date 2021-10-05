@@ -21,8 +21,10 @@ class BlogsController < ApplicationController
   end
 
   def edit
+    @blog = Blog.find(params[:id])
+    
   end
-
+    
   private
   def blog_params
     params.require(:blog).permit(:title, :category, :body)
